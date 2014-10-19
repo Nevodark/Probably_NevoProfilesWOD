@@ -18,6 +18,7 @@ ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 		"!player.buff(1784)", --Stealth buff
 		"!player.energy >= 100",
 		"target.range <= 5",
+		"!player.buff(121152)", --Blindside
 		"!modifier.multitarget"
 	}},
  
