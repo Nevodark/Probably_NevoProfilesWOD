@@ -2,21 +2,17 @@ ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 	{"Smoke bomb", "modifier.lalt"},
 	{"Kick", "modifier.interrupts"},
 	--Items
-	{ "#5512", "player.health < 50" }, --HS
+	--{ "#5512", "player.health < 50" }, --HS
 	{ "Recuperate", {"player.health <= 40", "player.combopoints >= 2", "!player.buff(Recuperate)", "toggle.recuperate"} }, -- Recuperate
-	{ "#76089", "target.debuff(79140)", "!player.buff(76089)"},
+	--{ "#76089", {"target.debuff(79140)", "!player.buff(76089)"}},
+	{ "/cast Virmen's Bite", { "target.debuff(79140", "!player.buff(76089)" } },
 	--Cooldowns
-	{"14185", { --Preperation
-		"modifier.cooldowns",
-		"!playerbuff(11327)", --Vanish Buff
-		"player.spell(1856).cooldown > 60", -- Checks Vanish Cooldown
-		"player.energy >= 20"
-	}},
  
 	{"1856", { --Vanish
 		"toggle.vanish",
 		"!player.buff(1784)", --Stealth buff
 		"!player.energy >= 100",
+		"!player.spell(79140).cooldown <= 30",
 		"target.range <= 5",
 		"!player.buff(121152)", --Blindside
 		"!modifier.multitarget"
@@ -41,6 +37,13 @@ ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 		"!player.spell(152151).exists", --Shadow Reflection
 		"player.buff(5171)",
 		"target.range <= 5"
+	}},
+
+	{"14185", { --Preperation
+		"modifier.cooldowns",
+		"!playerbuff(11327)", --Vanish Buff
+		"player.spell(1856).cooldown > 60", -- Checks Vanish Cooldown
+		"player.energy >= 20"
 	}},
  
 	--Main
@@ -102,12 +105,14 @@ ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 	{"111240", { --Dispatch
 		"target.health <= 35",
 		"player.combopoints < 5",
-		"!player.spell(114015).exists"
+		"!player.spell(114015).exists",
+		--"@Nevo.Nevo.AssPooling()"
 	}},
 
 	{"1329", { --Mutilate
 		"target.health >= 36",
-		"player.combopoints <= 4"
+		"player.combopoints <= 4",
+		--"@Nevo.Nevo.AssPooling()"
 	}},
 },
 { --OOC
