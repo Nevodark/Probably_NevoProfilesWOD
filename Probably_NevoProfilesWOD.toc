@@ -9,3 +9,4 @@ Libs\NevoLib.lua
 
 # Rotation m8
 Routine\WoDAssassin.lua
+Routine\WoDSub.lua

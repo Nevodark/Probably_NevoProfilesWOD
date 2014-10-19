@@ -40,7 +40,7 @@ function Nevo.Pooling()
 end
 
 
---function Nevo.snd()
+---function Nevo.snd()
 -- if UnitAura("player", GetSpellInfo(5171)) == nil then
 --    return 0
 --else
