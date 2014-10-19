@@ -1,0 +1,11 @@
+## Interface: 60000
+## Title: Probably - [|cFFC41F3BNevoProfiles|r]
+## Notes: ProbablyEngine Custom Subtlety Rogue
+## Dependencies: Probably
+
+# Libs
+Libs\NevoLib.lua
+
+
+# Rotation m8
+Routine\WoDAssassin.lua
