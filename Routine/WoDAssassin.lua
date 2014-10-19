@@ -1,6 +1,10 @@
 ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 	{"Smoke bomb", "modifier.lalt"},
 	{"Kick", "modifier.interrupts"},
+	--Items
+	{ "#5512", "player.health < 50" }, --HS
+	{ "Recuperate", {"player.health <= 40", "player.combopoints >= 2", "!player.buff(Recuperate)", "toggle.recuperate"} }, -- Recuperate
+	{ "#76089", "target.debuff(79140)", "!player.buff(76089)"},
 	--Cooldowns
 	{"14185", { --Preperation
 		"modifier.cooldowns",
@@ -89,11 +93,6 @@ ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 		"!target.debuff(122233).duration <= 6"
 	}},
  
-	{"1329", { --Mutilate
-		"target.health >= 36",
-		"player.combopoints <= 4"
-	}},
- 
 	{"111240", {
 		"player.spell(114015).exists",
 		"player.buff(115189).count < 5"
@@ -103,12 +102,18 @@ ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
 		"target.health <= 35",
 		"player.combopoints < 5",
 		"!player.spell(114015).exists"
-	}}
+	}},
+
+	{"1329", { --Mutilate
+		"target.health >= 36",
+		"player.combopoints <= 4"
+	}},
 },
 { --OOC
 	{"2823", "player.buff(2823).duration <= 600"}, --Deadly poison
 	{"1329", { "target.alive", "player.buff(11327)"}, "target"},
 },
-function() -- Init Code
+function() -- Init Code ability_rogue_recuperate
+	ProbablyEngine.toggle.create('recuperate', 'Interface\\Icons\\ability_rogue_recuperate','Recuperate','Enable or Disable use of Recuperate')
 	ProbablyEngine.toggle.create('vanish', 'Interface\\Icons\\ability_vanish','Vanish','Enable or Disable use of Vanish')	  
 end)
