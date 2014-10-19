@@ -1,4 +1,6 @@
 ProbablyEngine.rotation.register_custom(259, "~|cFFC41F3BWoDAssassin|r~", {
+	{"Smoke bomb", "modifier.lalt"},
+	{"Kick", "modifier.interrupts"},
 	--Cooldowns
 	{"14185", { --Preperation
 		"modifier.cooldowns",
